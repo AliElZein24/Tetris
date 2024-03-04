@@ -1,1 +1,1 @@
-console.log("Tetris game");
+console.log('Tetris game');
