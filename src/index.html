@@ -3,9 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tetris</title>
+    <link rel="stylesheet" href="F:\Tetris\src\styles\main.scss" />
+    <title>TETRIS GAME</title>
   </head>
   <body>
-    <h1>Tetris game</h1>
+    <div class="tetris">
+      <h1 class="tetris__header">TETRIS GAME</h1>
+      <div class="tetris__body">
+        <div class="rectangle__box">
+          <div class="rectangle__box--title">Next Shape</div>
+        </div>
+        <div class="rectangle__box--550"></div>
+        <div class="rectangle__box--850">
+          <div class="container">
+            <div class="score">Score:</div>
+            <div class="score">0</div>
+
+            <div class="high-score">High Score:</div>
+            <div class="high-score">10</div>
+
+            <button class="button new-game">New Game</button>
+            <button class="button pause">Pause</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
