@@ -33,10 +33,14 @@ body {
   width: 200px;
   height: 400px;
   border: 1px solid #000000;
-}
 
-.tetris__box_border-width_3 {
-  border-width: 3px;
+  &_border-width_3 {
+    border-width: 3px;
+  }
+
+  &_position_relative {
+    position: relative;
+  }
 }
 
 .tetris__next-shape {
@@ -98,5 +102,80 @@ body {
       background-color: #57b25a;
       color: white;
     }
+  }
+}
+
+.block {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  border-width: 4px;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    box-sizing: border-box;
+    border: solid 2px #000;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+  }
+
+  &_color_red {
+    background-color: #ff0000;
+    border-top: solid 4px #ff6666;
+    border-right: solid 4px #ff6666;
+    border-bottom: solid 4px #cc6600;
+    border-left: solid 4px #cc6600;
+  }
+
+  &_color_orange {
+    background-color: #ff6600;
+    border-top: solid 4px #ff9933;
+    border-right: solid 4px #ff9933;
+    border-bottom: solid 4px #cc6600;
+    border-left: solid 4px #cc6600;
+  }
+
+  &_color_magenta {
+    background-color: #cc00ff;
+    border-top: solid 4px #cc66ff;
+    border-right: solid 4px #cc66ff;
+    border-bottom: solid 4px #9900cc;
+    border-left: solid 4px #9900cc;
+  }
+
+  &_color_blue {
+    background-color: #0000ff;
+    border-top: solid 4px #6666ff;
+    border-right: solid 4px #6666ff;
+    border-bottom: solid 4px #0000cc;
+    border-left: solid 4px #0000cc;
+  }
+
+  &_color_lime {
+    background-color: #00ff00;
+    border-top: solid 4px #66ff66;
+    border-right: solid 4px #66ff66;
+    border-bottom: solid 4px #00cc00;
+    border-left: solid 4px #00cc00;
+  }
+
+  &_color_yellow {
+    background-color: #ffff00;
+    border-top: solid 4px #ffff99;
+    border-right: solid 4px #ffff99;
+    border-bottom: solid 4px #ffcc00;
+    border-left: solid 4px #ffcc00;
+  }
+
+  &_color_cyan {
+    background-color: #66ccff;
+    border-top: solid 4px #99ffff;
+    border-right: solid 4px #99ffff;
+    border-bottom: solid 4px #3399cc;
+    border-left: solid 4px #3399cc;
   }
 }
