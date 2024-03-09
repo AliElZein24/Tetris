@@ -9,61 +9,34 @@ body {
 }
 .tetris {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .tetris__header {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 58.09px;
   text-align: center;
-  width: 806px;
-  height: 83px;
-  position: absolute;
-  top: 56px;
-  left: 244px;
+  text-transform: uppercase;
+  margin: 50px 0;
 }
 
 .tetris__body {
-  width: 100%;
-  height: 500px;
-  background-color: #ffffff;
-  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  gap: 100px;
 }
 
-.rectangle__box {
+.tetris__box {
   width: 200px;
   height: 400px;
-  position: absolute;
-  top: 200px;
-  left: 250px;
   border: 1px solid #000000;
 }
 
-.rectangle__box--550 {
-  width: 200px;
-  height: 400px;
-  position: absolute;
-  top: 200px;
-  left: 550px;
-  border: 3px solid #000000;
-  box-shadow: 0 0 0 3px #ffffff;
+.tetris__box_border-width_3 {
+  border-width: 3px;
 }
-.rectangle__box--850 {
-  width: 200px;
-  height: 400px;
-  position: absolute;
-  top: 200px;
-  left: 850px;
-  border: 1px solid #000000;
-}
-.rectangle__box--title {
+
+.tetris__box--title {
   width: 192px;
   height: 32px;
   top: 258px;
@@ -76,7 +49,7 @@ body {
   border: 1px solid transparent;
   margin-top: 50px;
 }
-.container {
+.tetris__controller {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,15 +57,15 @@ body {
   margin-top: 20px;
 }
 
-.score,
-.high-score {
+.tetris__score-title,
+.tetris__heightscore-title {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 10px;
   margin-top: 5px;
 }
 
-.button {
+.tetris__action-button {
   padding: 10px 20px;
   margin: 5px 0;
   border-radius: 5px;
@@ -101,22 +74,23 @@ body {
   width: 150px;
   margin-top: 20px;
 }
-
-.new-game {
+tetris__action-button_newgame-button {
   background-color: white;
   color: #4f4cca;
   border-color: #4f4cca;
 }
-.new-game:hover {
-  background-color: #4f4cca;
-  color: white;
-}
-.pause {
+tetris__action-button_is-pause-button {
   background-color: white;
   color: #57b25a;
   border-color: #57b25a;
 }
-.pause:hover {
+
+.tetris__action-button_newgame-button:hover {
+  background-color: #4f4cca;
+  color: white;
+}
+
+.tetris__action-button_is-pause-button:hover {
   background-color: #57b25a;
   color: white;
 }

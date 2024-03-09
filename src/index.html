@@ -10,20 +10,28 @@
     <div class="tetris">
       <h1 class="tetris__header">TETRIS GAME</h1>
       <div class="tetris__body">
-        <div class="rectangle__box">
-          <div class="rectangle__box--title">Next Shape</div>
+        <div class="tetris__box">
+          <div class="tetris__box--title">Next Shape</div>
         </div>
-        <div class="rectangle__box--550"></div>
-        <div class="rectangle__box--850">
-          <div class="container">
-            <div class="score">Score:</div>
-            <div class="score">0</div>
+        <div class="tetris__box tetris__box_border-width_3"></div>
+        <div class="tetris__box">
+          <div class="tetris__controller">
+            <div class="tetris__score-title">Score:</div>
+            <div class="tetris__score-value">0</div>
 
-            <div class="high-score">High Score:</div>
-            <div class="high-score">10</div>
+            <div class="tetris__hightscore-title">High Score:</div>
+            <div class="tetris__heightscore-value">10</div>
 
-            <button class="button new-game">New Game</button>
-            <button class="button pause">Pause</button>
+            <button
+              class="tetris__action-button tetris__action-button_newgame-button"
+            >
+              New Game
+            </button>
+            <button
+              class="tetris__action-button tetris__action-button_is-pause-button"
+            >
+              Pause
+            </button>
           </div>
         </div>
       </div>
