@@ -104,7 +104,7 @@ module.exports = {
     'array-bracket-spacing': 'error',
     'array-callback-return': 'off',
     'arrow-body-style': ['error', 'as-needed'],
-    'arrow-parens': ['error', 'as-needed'],
+    'arrow-parens': ['off', 'as-needed'],
     'arrow-spacing': 'error',
     'accessor-pairs': 'off',
     'block-scoped-var': 'off',
