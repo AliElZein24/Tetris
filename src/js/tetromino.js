@@ -37,12 +37,27 @@ export default class Tetromino {
     });
   }
 
-  move() {
-    setInterval(() => {
-      this.y++;
-      this.clear();
-      this.blocks = this.createBlocks();
+  moveDown() {
+    const previousY = this.y;
+    this.clear();
+    this.y++;
+    const blocks = this.createBlocks();
+    if (this.checkCollision(blocks)) {
+      this.y = previousY;
       this.draw();
-    }, 1000);
+      return false;
+    }
+    this.blocks = blocks;
+    this.draw();
+    return true;
+  }
+
+  checkCollision(blocks) {
+    for (const block of blocks) {
+      if (block.y > 19) {
+        return true;
+      }
+    }
+    return false;
   }
 }

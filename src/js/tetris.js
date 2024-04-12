@@ -8,19 +8,39 @@ import I from './i';
 const shapes = [I, Z, J, L, O, S, T];
 
 export default class Tetris {
-  constructor({ playingField }) {
-    this.playingField = playingField;
-  }
-
   getRandomShape() {
     const RandomShape = shapes[Math.floor(Math.random() * shapes.length)];
-    const shape = new RandomShape({
-      x: Math.floor(this.playingField.clientWidth / 20 / 2) - 1,
-      y: 0,
-      playingField: this.playingField, // Corrected to use this.playingField
+    return new RandomShape({
+      x: 4,
+      y: -2,
+      playingField: this.elements.playingField,
       rotation: 0,
       unitSize: 20,
     });
-    return shape;
+  }
+  get elements() {
+    return {
+      playingField: document.querySelector('.js-playing-field'),
+    };
+  }
+  sleep(time) {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(), time);
+    });
+  }
+  start() {
+    this.shape = this.getRandomShape();
+    this.drawShape();
+  }
+  drawShape() {
+    this.shape.draw();
+    this.moveCurrentShape();
+  }
+  async moveCurrentShape() {
+    if (!this.shape.moveDown()) {
+      return;
+    }
+    await this.sleep(700);
+    this.moveCurrentShape();
   }
 }
