@@ -2,7 +2,7 @@ import Tetromino from './tetromino';
 
 export default class T extends Tetromino {
   static get color() {
-    return 'magneta';
+    return 'magenta';
   }
 
   static get blockOptions() {

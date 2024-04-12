@@ -12,6 +12,7 @@ export default class Tetromino {
 
   createBlocks() {
     let options = this.constructor.blockOptions[this.rotation];
+    console.log('y', this.y);
     const blocks = options.map(
       (item) =>
         new Block({
@@ -28,5 +29,20 @@ export default class Tetromino {
     this.blocks.forEach((block) => {
       this.playingField.append(block.getHtmlElement());
     });
+  }
+
+  clear() {
+    this.blocks.forEach((block) => {
+      this.playingField.removeChild(block.div);
+    });
+  }
+
+  move() {
+    setInterval(() => {
+      this.y++;
+      this.clear();
+      this.blocks = this.createBlocks();
+      this.draw();
+    }, 1000);
   }
 }
