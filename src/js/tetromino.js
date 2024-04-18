@@ -29,4 +29,34 @@ export default class Tetromino {
       this.playingField.append(block.getHtmlElement());
     });
   }
+
+  clear() {
+    this.blocks.forEach((block) => {
+      this.playingField.removeChild(block.div);
+    });
+  }
+
+  moveDown() {
+    const previousY = this.y;
+    this.clear();
+    this.y++;
+    const blocks = this.createBlocks();
+    if (this.checkCollision(blocks)) {
+      this.y = previousY;
+      this.draw();
+      return false;
+    }
+    this.blocks = blocks;
+    this.draw();
+    return true;
+  }
+
+  checkCollision(blocks) {
+    for (const block of blocks) {
+      if (block.y > 19) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

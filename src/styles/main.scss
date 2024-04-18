@@ -41,6 +41,10 @@ body {
   &_position_relative {
     position: relative;
   }
+
+  &_overflow_hidden {
+    overflow: hidden;
+  }
 }
 
 .tetris__next-shape {
