@@ -18,24 +18,29 @@ export default class Tetris {
       unitSize: 20,
     });
   }
+
   get elements() {
     return {
       playingField: document.querySelector('.js-playing-field'),
     };
   }
+
   sleep(time) {
     return new Promise((resolve) => {
       setTimeout(() => resolve(), time);
     });
   }
+
   start() {
     this.shape = this.getRandomShape();
     this.drawShape();
   }
+
   drawShape() {
     this.shape.draw();
     this.moveCurrentShape();
   }
+
   async moveCurrentShape() {
     if (!this.shape.moveDown()) {
       return;

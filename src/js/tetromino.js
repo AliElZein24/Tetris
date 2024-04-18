@@ -12,7 +12,6 @@ export default class Tetromino {
 
   createBlocks() {
     let options = this.constructor.blockOptions[this.rotation];
-    console.log('y', this.y);
     const blocks = options.map(
       (item) =>
         new Block({
